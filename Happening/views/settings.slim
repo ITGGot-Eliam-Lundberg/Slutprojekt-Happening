@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    title Application
+    link rel="stylesheet" type='text/css' href="/css/stylesheet.css"
+  body
+    span#container
+      section#main
+        h1#settings_header Settings
+        div#placeholder_settings
+          form#settings_form_fix method="post" name="settings" action="/settings/#{@current_user.id}/save"
+            ul#settings_form
+              li
+                input.input_form2 placeholder="E-post" aria-required="true" name="epost" value="#{@current_user.e_mail}"
+              li
+                input.input_form2 placeholder="Birth-Date" name="birth-date" value="#{@current_user.birth_date}" type="date"
+              /li
+                input.input_form2 placeholder="Hometown" name="hometown" value="#{@current_user.hometown}"
+              li
+                input.input_form2 placeholder="Phone" name="phone-number" value="#{@current_user.phone_number}"
+              li
+                input.input_form2 placeholder="Nytt lösenord" aria-required="true" name="password" type="password"
+              li
+                input.input_form2 placeholder="Bekräfta nytt lösenord" aria-required="true" name="password_confirm" type="password"
+              li#mid
+                button type="reset" Reset
+              li
+                input#verify.input_form2 placeholder="Ange nuvarande lösenord" aria-required="true" name="password_check"
+              li#left
+                button type="sumbit" Save
+          a href="/"
+            button#right Cancel
+      footer.login_footer
+        p 2016 HAPPENING
+        p#copy ©

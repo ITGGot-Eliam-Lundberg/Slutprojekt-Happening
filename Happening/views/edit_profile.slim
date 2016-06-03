@@ -1,0 +1,10 @@
+article.main_profile
+  div#profile_header
+    img.profile_picture src="#{@current_user.picture}"
+    div#edit_profile_box
+      form#edit_profile_form action="/profile/#{@current_user.id}/edit/save" method="post"
+        input.input_form#name_input maxlength="25" name="fullt_namn" value="#{@current_user.full_name}"
+        textarea.input_form#description_input name="beskrivning" #{@current_user.description}
+        button#profile_button_save type="submit" Save
+      a href="/profile/#{@current_user.id}"
+        button#profile_button_cancel Cancel

@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    title Happening
+    script src="/lib/jquery-2.2.3.min.js"
+    script src="/js/scripts.js"
+    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /
+    link href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css" rel="stylesheet" /
+    script defer="" src="https://code.getmdl.io/1.1.3/material.min.js"
+    link rel="stylesheet" type='text/css' href="/css/stylesheet.css"
+  body
+    span#container
+      section#main
+        #search_text_box
+          h1 Search
+        div.lighter.sizefix
+          i#search_icon.material-icons search
+          form.sizefix action="/search" method="post" id="search_form"
+            span
+              input.search.rounded.marginfix placeholder="Search..." type="text" name="search_input"
+      footer
+        p 2016 HAPPENING
+        p#copy ©

@@ -1,0 +1,16 @@
+article.main_flow
+  div#flow
+    -for happening in @relevant_happenings
+      div#listed_happening_box
+        a href="/profile/#{happening}"
+          p#user_header = happening.name
+        p#user_description = happening.description
+
+
+
+javascript:
+  var firstTime = "#{@first == "true"}";
+
+  if (firstTime === "true") {
+    var answerCheck = confirm("Vill du uppdatera dina inställningar för en behagligare upplevelse?");
+  }

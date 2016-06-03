@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    title Happening
+    script src="/lib/jquery-2.2.3.min.js"
+    script src="/js/scripts.js"
+    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" /
+    link href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css" rel="stylesheet" /
+    script defer="" src="https://code.getmdl.io/1.1.3/material.min.js"
+    link rel="stylesheet" type='text/css' href="/css/stylesheet.css"
+  body
+    span#container
+      section#main_start
+        nav
+          #nav_box
+            #item_box
+              a href="/"
+                img src="/img/happening.png"
+              #button_box
+                ul
+                  li.hide
+                    a href="/searchbox"
+                      button#search_button.profile_buttons
+                        i#search_icon2.material-icons.profile_icons search
+                  li
+                    a href="/happening/create"
+                      button#happening_button.profile_buttons
+                        i#happening_icon.material-icons.profile_icons star
+                  li
+                    a href="/calendar/#{@current_user.id}"
+                      button#calendar_button.profile_buttons
+                        i#calendar_icon.material-icons.profile_icons date_range
+                  li
+                    a href="/messages/#{@current_user.id}"
+                      button#message_button.profile_buttons
+                        i#message_icon.material-icons.profile_icons class=".material-icons mdl-badge mdl-badge--overlap" data-badge="+99" mail_outline
+                  li#last_icon.dropdown
+                    button#profile_button.profile_buttons.test onClick="dropIt()"
+                      i#profile_icon.material-icons.profile_icons account_circle
+                    div#profile_dropdown.dropdown_content
+                      a href="/profile/#{@current_user.id}"
+                        button.mdl-button type="button" Profil
+                      a href="/settings/#{@current_user.id}"
+                        button#show-dialog.mdl-button type="button" onClick="showSettings()" Inställningar
+                      a href="/logout"
+                        button.mdl-button type="button" Logga ut
+              #search_box
+                div.lighter
+                  i#search_icon.material-icons search
+                  form action="/search" method="post" id="search_form"
+                    span
+                      input.search.rounded placeholder="Search..." type="text" name="search_input"
+        main
+          ==yield
+        footer
+          p 2016 HAPPENING
+          p#copy ©

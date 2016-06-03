@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    title Application
+    link rel="stylesheet" type='text/css' href="/css/stylesheet.css"
+  body
+    span#container
+      section#main
+        #screen_holder
+          #info_screen
+            img#img1 src="/img/happeninglogo.png"
+            h1#info_margin_fix Happening är appen för dig
+            p som känner att varje dag är en dag värd att ta vara på. En instagram med facebook-events istället för bilder, också kallat happening.
+            p  Appen tillåter dig att skapa och visa intresse för olika events AKA happenings. Man ska kunna bjuda in sina vänner och man ska kunna ha koll på vem som går till vilka happenings, blahblah.
+            img#img2 src="/img/happeninglogo.png"
+            h1 hej mitt namn är basglaks
+            p sldfkjasdl ff lasdjf alskdjf asjf dlasd fjas dklf jasldfjsa ldkjfasd lkfjasd lfkjasdf lkajsdf laösdkfj asöldf jasdlökf ja
+            p ett sldjfsald fsadl asdf asdf  sadf asdf sd faff jasdlf jasdlf jasdlöf kjasdfl kajsdf laksdjf alskd fjasdlkf jasdlö kfjasdl fkjasd ölfkasjdf alsöd fj lsadkfj adf alsdk fj asdflkasjd ölaskjdfas kdf ljsa dflj
+            img#img3 src="/img/happeninglogo.png"
+            h1 ahsldkfjdasdf hdsaskldjfa
+            p asd kfjsdhaf asdk fhasd fkajsdhf asdk fjhasd klfjh sadf asdf asd fasd fasd fasd fasd fasdf ads f sdf sdf asdf asdf
+          #register_screen
+            #register
+              #header
+                #header_box
+                  img#header_title src="/img/happening.png"
+                #header_text_box
+                  p#header_text Registrera dig för att se vad dina vänner hittar på.
+              form#register_form method="post" action="/registration"
+                  input.input_form placeholder="E-post" aria-required="true" name="epost"
+                  input.input_form placeholder="Fullständigt namn" aria-required="true" name="fullt_namn"
+                  input.input_form placeholder="Lösenord" aria-required="true" name="password" type="password"
+                  input.input_form placeholder="Bekräfta lösenord" aria-required="true" name="password_check" type="password"
+                  button#register_button type="submit" Gå med
+              #av_cp
+                p
+                  ' Genom att registrera dig så godkänner du våra
+                  a.link_fix href="användarvillkor" användarvillkor
+                  '  och vår
+                  a.link_fix href="säkerhetspolicy"säkerhetspolicy
+                  ' .
+            #login_switch
+              p
+                ' Har du ett konto?
+                a.link_fix href="login" Logga in
+              a href="login/facebook"
+                img.logo src="/img/facebooklogo.png"
+              a href="login/google"
+                img.logo src="/img/googlelogo.png"
+              a href="login/twitter"
+                img.logo src="/img/twitterlogo.png"
+      footer.login_footer
+        p 2016 HAPPENING
+        p#copy ©

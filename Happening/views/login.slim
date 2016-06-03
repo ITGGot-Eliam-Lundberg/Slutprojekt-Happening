@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    title Application
+    link rel="stylesheet" type='text/css' href="/css/stylesheet.css"
+  body
+    span#container
+      section#main
+        #screen_holder2
+          #login_screen
+            #login
+              #header
+                #header_box
+                    img#header_title src="/img/happening.png"
+                #header_text_box
+                  p#header_text Logga in för att se vad dina vänner hittar på.
+              form#register_form method="post" action="/logging_in"
+                input.input_form placeholder="E-post" aria-required="true" name="epost"
+                input.input_form placeholder="Lösenord" aria-required="true" name="password_check" type="password"
+                button#register_button type="submit"Logga in
+              #media_login
+                a.logo href="login/facebook"
+                  img src="/img/facebooklogo.png"
+                a.logo href="login/google"
+                  img src="/img/googlelogo.png"
+                a.logo href="login/twitter"
+                  img src="/img/twitterlogo.png"
+            #register_switch
+              p
+                ' Har du inget konto?
+                a.link_fix href="/" Registrera dig
+      footer.login_footer
+        p 2016 HAPPENING
+        p#copy ©

@@ -1,0 +1,17 @@
+-for profile in @relevant_users
+ -unless profile == @current_user
+    div#listed_user_box
+      a href="/profile/#{profile.id}"
+        img.profile_picture_small src="#{profile.picture}"
+        p#user_header =profile.full_name
+      p#user_description =profile.description
+      ul
+        li Happenings
+        li Följer #{Following.count(:follower_id => profile.id)}
+        li Följare #{Following.count(:followee_id => profile.id)}
+      -if Following.first(:follower_id => @current_user.id, :followee_id => profile.id)
+        form.absolute method="post" action="/follow-relation/#{@current_user.id}"
+          button#unfollow_button_search Unfollow
+      -else
+        form.absolute method="post" action="/follow-relation/#{@current_user.id}"
+          button#follow_button_search Follow

@@ -1,0 +1,17 @@
+article.main_profile
+  div#profile_header
+    img.profile_picture src="#{@profile_user.picture}"
+    h1 #{@profile_user.full_name}
+    -if @current_user == @profile_user
+      form#profile_form action="/profile/#{@current_user.id}/edit"
+        button#edit_profile REDIGERA PROFIL
+    -elsif Following.first(:follower_id => @current_user.id, :followee_id => @profile_user.id)
+      button#unfollow_button Unfollow
+    -else
+      button#follow_button Follow
+    p #{@profile_user.description}
+    ul
+      li Happenings
+      li Följer #{Following.count(:follower_id => @profile_user.id)}
+      li Följare #{Following.count(:followee_id => @profile_user.id)}
+    div#happening_display
